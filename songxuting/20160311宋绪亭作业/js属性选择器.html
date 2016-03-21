@@ -1,0 +1,27 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<script>
+	document.addEventListener('DOMContentLoaded',function (){
+			var oEle=document.querySelectorAll('#box ul .on');
+			alert(oEle.length);
+	},false);
+</script>
+</head>
+ <body>
+ <div id="box">
+	<ul>
+		<li><input type="button" value="aaa" /></li>
+		<li class="on"><input type="text" value="aaa" /></li>
+		<li><input type="button" value="aaa" /></li>
+		<li class="on"><input type="text" value="aaa" /></li>
+	</ul>
+</div>
+
+ </body>
+</html>

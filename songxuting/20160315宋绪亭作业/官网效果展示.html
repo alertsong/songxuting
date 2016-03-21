@@ -1,0 +1,65 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<style>
+	*{ padding: 0; margin: 0; list-style: none; }
+	ul{ width: 300px; height: 200px; position: relative; top: 0; left: 0; margin: 100px auto; perspective:800px; }
+	li{ width: 100%; height: 100%; background: #ff0; position: absolute; top: 0; left: 0; text-align: center; line-height: 200px; opacity: 0; border: 1px solid #000; -webkit-transition: 1s all ease;  }
+	li.on{ opacity: 1; z-index: 5;  }
+	li.l1{opacity: 0.7; -webkit-transform: translateX(-200px) rotateY(60deg);z-index: 3; }
+	li.l2{-webkit-transform: translateX(-250px) rotateY(65deg); z-index: 1;}
+	li.r1{ opacity: 0.7; -webkit-transform:translateX(200px) rotateY(-60deg);z-index: 3; }
+	li.r2{ -webkit-transform:translateX(250px) rotateY(-65deg); z-index: 1; }
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function (){
+		var oPrev=document.querySelector('.prev');
+		var oNext=document.querySelector('.next');
+		var aLi=document.querySelectorAll('ul li');
+		var aClass=[];
+		for(var i=0; i<aLi.length; i++)
+		{
+			aClass.push(aLi[i].className);
+		}
+		oNext.onclick=function ()
+		{
+			aClass.unshift(aClass.pop());
+			for(var i=0; i<aLi.length; i++)
+			{
+				aLi[i].className=aClass[i];
+			}
+		};
+		oPrev.onclick=function ()
+		{
+			aClass.push(aClass.shift());
+			for(var i=0; i<aLi.length; i++)
+			{
+				aLi[i].className=aClass[i];
+			}
+		};
+	},false);
+</script>
+</head>
+ <body>
+ 	<a href="javascript:;" class="prev">上一个</a>
+ 	<a href="javascript:;" class="next">下一个</a>
+ 	<ul>
+ 		<li class="l2">1</li>
+ 		<li class="l1">2</li>
+ 		<li class="on">3</li>
+ 		<li class="r1">4</li>
+ 		<li class="r2">5</li>
+ 		<li>6</li>
+ 		<li>7</li>
+ 		<li>8</li>
+ 		<li>9</li>
+ 		<li>10</li>
+ 		<li>11</li>
+ 	</ul>
+ </body>
+</html>

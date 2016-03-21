@@ -1,0 +1,32 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<style>
+	.active{ width: 200px; height: 200px; background: yellow; }
+	.red{ width: 200px; height: 200px; background: red; }
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function (){
+		var oBtn=document.querySelector('input');
+		var oDiv=document.querySelector('div');
+		//添加一个class
+		oDiv.classList.add('active');
+		//删除一个class
+		oDiv.classList.remove('or');
+		oBtn.onclick=function ()
+		{
+			oDiv.classList.toggle('red');
+		};
+	},false)
+</script>
+</head>
+ <body>
+ 	<input type="button" value="按钮">
+ 	<div class="or">ddd</div>
+ </body>
+</html>

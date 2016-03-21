@@ -1,0 +1,49 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<style>
+	html,body{ width: 100%; height: 100%; overflow: hidden; }
+	div{ width: 300px; height: 300px; text-align: center;  line-height: 50px; background: #ccc; position: absolute; top:50%; left: 50%;  margin-left: -150px; margin-top: -150px; -webkit-transform:scale(4,4); opacity: 0; display: none; }
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function (){
+		var oBtn=document.getElementById('login_btn');
+		var oBox=document.querySelector('div');
+		var oClase=document.querySelector('a');
+		oBtn.onclick=function ()
+		{
+			oBox.style.display='block';
+			oBox.style.WebkitTransition='.5s all ease';
+			setTimeout(function (){
+				oBox.style.opacity=1;
+				oBox.style.WebkitTransform='scale(1,1)';
+			},1);	
+		};
+		oClase.onclick=function ()
+		{
+			oBox.style.opacity=0;
+			oBox.style.WebkitTransform='scale(4,4)';
+			function fnEnd()
+			{
+				oBox.style.display='none';
+				oBox.removeEventListener('transitionend',fnEnd,false);
+			}
+			oBox.addEventListener('transitionend',fnEnd,false)
+		};
+	},false);
+</script>
+</head>
+ <body>
+ 	<input type="button" value="登陆" id="login_btn"/>
+ 	<div>
+ 		用户名: <input type="text"/></br>
+ 		密码：<input type="text"/></br>
+ 		退出：<a href="javascript:;">X</span>
+ 	</div>
+ </body>
+</html>

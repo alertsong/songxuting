@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	document.addEventListener('DOMContentLoaded',function (){
+			var oPlay=document.querySelector('#play');
+			var oPause=document.querySelector('#pause');
+			var oStop=document.querySelector('#stop');
+			var oV=document.querySelector('video');
+			oPlay.onclick=function ()
+			{
+				oV.play();
+			};
+			oPause.onclick=function ()
+			{
+				oV.pause();
+			};
+			oStop.onclick=function ()
+			{
+				oV.pause();
+				oV.currentTime=0;
+			};
+	},false);
+</script>
+</head>
+	
+<body>
+	<input type="button" value="播放" id="pley"/>
+    <input type="button" value="暂停"  id="pause"/>
+    <input type="button" value="停止"  id="stop">
+    <video src="http://images.sohu.com/ytv/SH/Coke/64036020120714021103.mp4">
+    	
+    </video>
+    
+</body>
+</html>

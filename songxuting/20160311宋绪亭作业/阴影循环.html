@@ -1,0 +1,40 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<style>
+	body{ width: 4000px; height: 4000px;  }
+	div{ width: 200px; height: 200px; background: #ccc;  }
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function (){
+		var oDiv=document.querySelector('div');
+		var i=0;
+		function rnd(n,m)
+		{
+			return parseInt(n+Math.random()*(m-n));
+		}
+		var bOk=true;
+		setInterval(function (){
+			i+=10;
+			if(bOk)
+			{
+				oDiv.style.boxShadow+=i+'px '+i+'px 10px rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				bOk=false;
+			}else{
+				oDiv.style.boxShadow+=','+i+'px '+i+'px 10px rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				
+			}		
+		},400);
+	},false);
+
+</script>
+</head>
+ <body>
+ 	<div>你好吗</div>
+ </body>
+</html>

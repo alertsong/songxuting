@@ -1,0 +1,27 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<style>
+	@keyframes test{
+		from{ width: 200px; height: 200px; }
+		to{ width:400px; height: 400px;  }
+	}
+	div{ width: 200px; height: 200px; background: red; }
+	div:active{ 
+		animation-name: test;
+		animation-duration: 1s;
+		animation-timing-function:ease-out;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	 }
+</style>
+</head>
+ <body>
+ 	<div></div>
+ </body>
+</html>

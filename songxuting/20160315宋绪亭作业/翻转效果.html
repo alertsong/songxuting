@@ -1,0 +1,22 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<style>
+	div{ width: 200px; height: 300px; position: relative; top: 0; left: 0; margin: 100px auto; -webkit-transition:1s all ease; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateY(0deg); }
+	.front{ width: 100%; height: 100%; background:red;  position: absolute; top: 0; left: 0; -webkit-transform: translateZ(1px); }
+	.back{ width: 100%; height: 100%; background: blue; position: absolute; top: 0; left: 0; -webkit-transform: translateZ(-1px) scale(-1,1); }
+	div:active{ -webkit-transform: perspective(800px) rotateY(190deg); }
+</style>
+</head>
+ <body>
+ 	<div>
+ 		<span class="front">front</span>
+ 		<span class="back">back</span>
+ 	</div>
+ </body>
+</html>

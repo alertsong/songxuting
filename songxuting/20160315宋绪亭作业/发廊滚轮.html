@@ -1,0 +1,45 @@
+<!--code byËÎÐ÷Í¤-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>ÐÂ½¨ÍøÒ³</title>
+<meta charset="utf-8" />
+<meta name="description" content="ÍøÒ³ÃèÊö"/>
+<meta name="Keywords" content="¹Ø¼ü×Ö"/>
+<style>
+	@keyframes test{
+		form{ left: 0; }
+		to{ left: -114px }
+	}
+	.box{ width: 100px; height:300px; border:1px solid #ccc; position: relative; top: 0; left: ; overflow: hidden; margin: 100px auto;   }
+	.box .bor{ width: 400px; height:300px; background:-webkit-repeating-linear-gradient(-45deg,black 0px, black 20px, #fff 20px, #fff 40px); position: absolute; top: 0; left: 0; 
+		animation-name: test;
+		animation-duration:.5s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	 }
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function (){
+		var oC1=document.querySelector('#c1');
+		var oC2=document.querySelector('#c2');
+		var oBor=document.querySelector('.bor');
+		oC1.onchange=function ()
+		{
+			oBor.style.background='-webkit-repeating-linear-gradient(-45deg,'+oC1.value+' 0px, '+oC1.value+' 20px, '+oC2.value+' 20px, '+oC2.value+' 40px)';
+		};
+		oC2.onchange=function ()
+		{
+			oBor.style.background='-webkit-repeating-linear-gradient(-45deg,'+oC1.value+' 0px, '+oC1.value+' 20px, '+oC2.value+' 20px, '+oC2.value+' 40px)';
+		};
+	},false);
+</script>
+</head>
+ <body>
+ 	<input type="color" value="#000000" id="c1" />
+ 	<input type="color" value="#ffffff" id="c2" />
+ 	<div class="box">
+ 		<div class="bor"></div>
+ 	</div>
+ </body>
+</html>

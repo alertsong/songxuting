@@ -1,0 +1,41 @@
+<!--code by宋绪亭-->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8" />
+<meta name="description" content="网页描述"/>
+<meta name="Keywords" content="关键字"/>
+<style>
+div{ width:200px; height: 200px; background: red;}
+</style>
+<script>
+	function setStyle(obj,name,value)
+	{
+		obj.style['Webkit'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+		obj.style['Moz'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+		obj.style['ms'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+		obj.style['O'+name.charAt(0).toUpperCase()+name.substring(1)]=value;	
+		obj.style[name]=value;
+	}
+	document.addEventListener('DOMContentLoaded',function (){
+		var oDiv=document.querySelector('div');
+		setStyle(oDiv,'transition','1s all ease');
+		/*oDiv.style.transition='1s all ease';
+		oDiv.style.WebkitTransition='1s all ease';
+		//ie比较二，只能用小写
+		oDiv.style.msTransition='1s all ease';
+		oDiv.style.MozTransition='1s all ease';
+		oDiv.style.OTransition='1s all ease';*/
+		oDiv.onclick=function ()
+		{
+			oDiv.style.width='400px';
+			oDiv.style.height='400px';
+		};
+	},false)
+</script>
+</head>
+ <body>
+ 	<div></div>
+ </body>
+</html>
